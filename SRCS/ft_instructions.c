@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:50:37 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/25 14:33:44 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/01/26 13:05:20 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,22 @@ void	ft_rotate(t_list **lst)
 	tmp->value = first;
 }
 
+static int	ft_last(t_list *lst)
+{
+	int	last;
+
+	while (lst)
+	{
+		last = lst->value;
+		lst = lst->next;
+	}
+	return (last);
+}
+
 void	ft_reverse_rotate(t_list **lst)
 {
 	int		last;
-	int		a; 
+	int		a;
 	int		b;
 	t_list	*tmp;
 
