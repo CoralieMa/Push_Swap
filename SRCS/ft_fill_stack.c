@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:12:42 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/27 10:51:06 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:03:35 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_list	*ft_fill_stack(char **data)
 	t_list	*stack;
 	int		nb;
 
-	
 	stack = NULL;
 	++data;
 	while (*data)
@@ -37,12 +36,5 @@ t_list	*ft_fill_stack(char **data)
 		ft_lstadd_back(&stack, ft_lstnew(nb));
 		++data;
 	}
-	// if (stack)
-	// 	printf("%d\n", stack->value);
-	// while (stack->next)
-	// {
-	// 	printf("%d\n", stack->next->value);
-	// 	stack = stack->next;
-	// }
 	return (stack);
 }

@@ -6,11 +6,50 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:39:07 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/27 15:22:57 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/07 15:28:45 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
+
+int	ft_lstsize(t_list *lst)
+{
+	int	size;
+
+	if (!lst)
+		return (0);
+	size = 1;
+	while (lst -> next)
+	{
+		lst = lst -> next;
+		size++;
+	}
+	return (size);
+}
+
+int	ft_lst_is_sorted(t_list *lst)
+{
+	int	i;
+
+	i = 0;
+	ft_printlst(lst, NULL);
+	printf("------\n");
+	while (lst)
+	{
+		printf("i = %d, index = %d\n", i, lst->index);
+		if (lst->index < i)
+		{
+			printf("***\n");
+			return (0);
+		}
+
+		i = lst->index;
+		// printf("-->  i = %d, index = %d\n", i, lst->index);
+		lst = lst->next;
+		// printf("i = %d\n", i);
+	}
+	return (1);
+}
 
 t_list	*ft_lstnew(int value)
 {
@@ -36,12 +75,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 			temp = temp -> next;
 		temp -> next = new;
 	}
-}
-
-void print_bin(unsigned char byte)
-{
-    int i = CHAR_BIT; /* however many bits are in a byte on your platform */
-    while(i--) {
-        putchar('0' + ((byte >> i) & 1)); /* loop through and print the bits */
-    }
 }

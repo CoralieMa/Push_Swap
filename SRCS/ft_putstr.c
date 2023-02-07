@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 14:59:18 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/07 12:08:05 by cmartino         ###   ########.fr       */
+/*   Created: 2023/02/07 13:01:11 by cmartino          #+#    #+#             */
+/*   Updated: 2023/02/07 13:03:13 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlen(const char *s)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	size_t	len;
 
-	stack_a = ft_fill_stack(argv);
-	ft_index(stack_a);
-	stack_b = NULL;
-	ft_printlst(stack_a, stack_b);
-	if (!ft_lst_is_sorted(stack_a))
+	if (!s)
+		return (0);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
+}
+
+void	ft_putstr(char *s)
+{
+	size_t	i;
+	size_t	len;
+
+	if (s)
 	{
-		if (argc > 6)
-			ft_radix(stack_a, stack_b);
-		else if (argc > 2)
-			ft_small_sort(stack_a, stack_b, argc - 1);
+		i = 0;
+		len = ft_strlen(s);
+		while (i < len)
+		{
+			write(1, &s[i], 1);
+			i++;
+		}
 	}
-	ft_printlst(stack_a, stack_b);
 }

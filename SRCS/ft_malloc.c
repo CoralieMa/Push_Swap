@@ -6,13 +6,13 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:59:14 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/26 12:02:14 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:04:08 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-void	*ft_malloc(int	count, int size)
+void	*ft_malloc(int count, int size)
 {
 	void	*a;
 

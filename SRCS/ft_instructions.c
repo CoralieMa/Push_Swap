@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:50:37 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/26 13:05:20 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/03 09:02:40 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_swap(t_list	*lst)
 
 	if (!lst || !lst->next)
 		return ;
-	temp = lst->value;
-	lst->value = lst->next->value;
-	lst->next->value = temp;
+	temp = lst->index;
+	lst->index = lst->next->index;
+	lst->next->index = temp;
 }
 
 void	ft_push(t_list **lst1, t_list **lst2)
@@ -43,13 +43,13 @@ void	ft_rotate(t_list **lst)
 	if (!lst || !(*lst)->next)
 		return ;
 	tmp = *lst;
-	first = (*lst)->value;
+	first = (*lst)->index;
 	while (tmp->next)
 	{
-		tmp->value = tmp->next->value;
+		tmp->index = tmp->next->index;
 		tmp = tmp->next;
 	}
-	tmp->value = first;
+	tmp->index = first;
 }
 
 static int	ft_last(t_list *lst)
@@ -58,7 +58,7 @@ static int	ft_last(t_list *lst)
 
 	while (lst)
 	{
-		last = lst->value;
+		last = lst->index;
 		lst = lst->next;
 	}
 	return (last);
@@ -73,13 +73,13 @@ void	ft_reverse_rotate(t_list **lst)
 
 	tmp = *lst;
 	last = ft_last(*lst);
-	a = (*lst)->value;
+	a = (*lst)->index;
 	while (tmp->next)
 	{
-		b = tmp->next->value;
+		b = tmp->next->index;
 		tmp = tmp->next;
-		tmp->value = a;
+		tmp->index = a;
 		a = b;
 	}
-	(*lst)->value = last;
+	(*lst)->index = last;
 }

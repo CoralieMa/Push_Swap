@@ -6,13 +6,13 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 13:31:28 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/27 13:37:18 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:11:10 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-static void	ft_lstmin(t_list *lst, int index)
+static void	ft_lstmin_index(t_list *lst, int index)
 {
 	int		min;
 	t_list	*pnt_min;
@@ -21,7 +21,7 @@ static void	ft_lstmin(t_list *lst, int index)
 	min = INT_MAX;
 	pnt_min = NULL;
 	tmp = lst;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->value <= min && tmp->index == -1)
 		{
@@ -38,13 +38,13 @@ void	ft_index(t_list *stack)
 {
 	int	index;
 	int	size;
-	
+
 	size = ft_lstsize(stack);
-	ft_lstmin(stack, 1);
+	ft_lstmin_index(stack, 1);
 	index = 2;
 	while (size > 1)
 	{
-		ft_lstmin(stack, index);
+		ft_lstmin_index(stack, index);
 		--size;
 		++index;
 	}

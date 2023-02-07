@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils_list.c                                    :+:      :+:    :+:   */
+/*   ft_lst_utils2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 14:47:36 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/27 13:30:14 by cmartino         ###   ########.fr       */
+/*   Created: 2023/02/07 12:51:08 by cmartino          #+#    #+#             */
+/*   Updated: 2023/02/07 12:51:51 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstmax(t_list *lst)
 {
-	int	size;
+	int		max;
 
-	if (!lst)
-		return (0);
-	size = 1;
-	while (lst -> next)
+	max = 0;
+	while (lst)
 	{
-		lst = lst -> next;
-		size++;
+		if (lst->index >= max)
+			max = lst->index;
+		lst = lst->next;
 	}
-	return (size);
+	return (max);
+}
+
+int	ft_lstmin(t_list *lst)
+{
+	int		min;
+
+	min = 5;
+	while (lst)
+	{
+		if (lst->index <= min)
+			min = lst->index;
+		lst = lst->next;
+	}
+	return (min);
 }

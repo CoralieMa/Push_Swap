@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:25:56 by cmartino          #+#    #+#             */
-/*   Updated: 2023/01/26 15:02:58 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:06:01 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	nb = 0;
-
 	if (str[i] == '-')
 	{
 		sign = -1;
