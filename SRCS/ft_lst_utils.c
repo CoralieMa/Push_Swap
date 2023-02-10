@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:39:07 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/07 15:28:45 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:36:19 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,12 @@ int	ft_lst_is_sorted(t_list *lst)
 	int	i;
 
 	i = 0;
-	ft_printlst(lst, NULL);
-	printf("------\n");
 	while (lst)
 	{
-		printf("i = %d, index = %d\n", i, lst->index);
 		if (lst->index < i)
-		{
-			printf("***\n");
 			return (0);
-		}
-
 		i = lst->index;
-		// printf("-->  i = %d, index = %d\n", i, lst->index);
 		lst = lst->next;
-		// printf("i = %d\n", i);
 	}
 	return (1);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FT_repush_small_sort.c                             :+:      :+:    :+:   */
+/*   ft_repush_small_sort.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:43:33 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/07 13:05:27 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:53:22 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,33 @@ static void	ft_min_and_max(t_list **stack_a, t_list **stack_b, int size)
 		ft_push(stack_a, stack_b);
 		ft_putstr("pa\n");
 	}
-	else if ((*stack_b)->index == size)
+	else
 	{
 		ft_push(stack_a, stack_b);
 		ft_putstr("pa\n");
 		ft_rotate(stack_a);
 		ft_putstr("ra\n");
+	}
+	(void)size;
+}
+
+void	ft_test(t_list *stack)
+{
+	if (stack->index < 3)
+	{
+		while (stack->index != 1)
+		{
+			ft_reverse_rotate(&stack);
+			ft_putstr("rra\n");
+		}
+	}
+	else
+	{
+		while (stack->index != 1)
+		{
+			ft_rotate(&stack);
+			ft_putstr("ra\n");
+		}
 	}
 }
 
@@ -35,24 +56,24 @@ void	ft_repush_small_sort(t_list **stack_a, t_list **stack_b, int size)
 
 	a = *stack_a;
 	b = *stack_b;
-	if (b->index == 1 || b->index == size)
+	if (b->index == 1 || b->index > ft_lstmax(a))
 		ft_min_and_max(&a, &b, size);
 	else
 	{
 		if (b->index > a->index && b->index < a->next->index)
 		{
 			ft_rotate(&a);
-			printf("ra\n");
 			ft_push(&a, &b);
-			printf("pa\n");
+			ft_putstr("ra\npa\n");
 		}
 		else
 		{
 			ft_rotate(&a);
-			printf("ra\n");
+			ft_putstr("ra\n");
 			ft_repush_small_sort(&a, &b, size);
 		}
 	}
+	ft_test(a);
 	*stack_a = a;
 	*stack_b = b;
 }

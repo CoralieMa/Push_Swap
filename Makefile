@@ -6,7 +6,7 @@
 #    By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 15:01:45 by cmartino          #+#    #+#              #
-#    Updated: 2023/02/07 13:04:05 by cmartino         ###   ########.fr        #
+#    Updated: 2023/02/10 11:00:10 by cmartino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,12 @@ FILES	= push_swap \
 			ft_lst_utils2 \
 			ft_lst_utils \
 			ft_lst_index \
+			ft_memcpy \
 			ft_malloc \
 			ft_putstr \
+			ft_split \
 			ft_radix \
+			ft_exit \
 			ft_atoi \
 			extra
 

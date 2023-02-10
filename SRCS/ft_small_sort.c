@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:52:43 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/07 15:19:37 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/10 11:53:36 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,10 @@ void	ft_sort_four(t_list *stack_a, t_list *stack_b)
 {
 	ft_push(&stack_b, &stack_a);
 	ft_putstr("pb\n");
-	ft_printlst(stack_a, NULL);
 	if (!ft_lst_is_sorted(stack_a))
-	{
-		printf("***********\n");
 		ft_sort_three(stack_a, ft_lstmin(stack_a), ft_lstmax(stack_a));
-	}
-		
 	ft_repush_small_sort(&stack_a, &stack_b, 4);
+	ft_test(stack_a);
 }
 
 void	ft_sort_five(t_list *stack_a, t_list *stack_b)
@@ -40,7 +36,6 @@ void	ft_sort_five(t_list *stack_a, t_list *stack_b)
 	ft_push(&stack_b, &stack_a);
 	ft_push(&stack_b, &stack_a);
 	ft_putstr("pb\npb\n");
-	ft_printlst(stack_a, stack_b);
 	if (!ft_lst_is_sorted(stack_a))
 		ft_sort_three(stack_a, ft_lstmin(stack_a), ft_lstmax(stack_a));
 	if (!ft_lst_is_sorted(stack_b))

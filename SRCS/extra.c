@@ -24,14 +24,14 @@ void ft_printlst(t_list *lst1, t_list *lst2)
 	{
 		if (lst1)
 		{
-			printf("%d\t->\t", lst1->index);
+			printf("%d\t->%d\t->\t", lst1->value,lst1->index);
 			print_bin(lst1->index);
 			printf("\t");
 			lst1 = lst1->next;
 		}
 		if (lst2)
 		{
-			printf("%d\t->\t", lst2->index);
+			printf("%d\t->%d\t->\t", lst2->value,lst2->index);
 			print_bin(lst2->index);
 			lst2 = lst2->next;
 		}
@@ -67,7 +67,7 @@ void ft_printlst2(t_list *lst1, t_list *lst2)
 	{
 		if (lst1)
 		{
-			printf("%d\t->\t", lst1->index);
+			printf("%d\t->%d\t->\t", lst1->value,lst1->index);
 			print_bin(lst1->index);
 			printf("\t");
 			lst1 = lst1->next;
@@ -76,7 +76,7 @@ void ft_printlst2(t_list *lst1, t_list *lst2)
 			printf("\t\t\t\t");
 		if (lst2)
 		{
-			printf("%d\t->\t", lst2->index);
+			printf("%d\t->%d\t->\t", lst2->value,lst2->index);
 			print_bin(lst2->index);
 			lst2 = lst2->next;
 		}

@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 11:25:56 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/10 10:35:32 by cmartino         ###   ########.fr       */
+/*   Created: 2022/10/03 13:31:58 by cmartino          #+#    #+#             */
+/*   Updated: 2023/02/08 19:56:50 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-int	ft_atoi(const char *str)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int				i;
-	int				sign;
-	unsigned long	nb;
+	char	*ptr1;
+	char	*ptr2;
+	size_t	i;
 
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
-	sign = 1;
-	nb = 0;
-	if (str[i] == '-')
+	ptr1 = (char *)dst;
+	ptr2 = (char *)src;
+	while (i < n)
 	{
-		sign = -1;
-		++i;
+		ptr1[i] = ptr2[i];
+		i++;
 	}
-	if (str[i] < '1' || str[i] > '9')
-		ft_exit();
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i ++] - 48);
-		if (nb > 2147483648 || (nb > 2147483647 && sign == 1))
-			ft_exit();
-	}
-	if (str[i])
-		ft_exit();
-	return (nb * sign);
+	return (dst);
 }

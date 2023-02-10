@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:48:51 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/07 15:13:08 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:35:11 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_sort_three_swap(t_list *stack, int max)
 	else
 	{
 		ft_rotate(&stack);
-		ft_putstr("ra 2\n");
+		ft_putstr("ra\n");
 	}
 }
 
@@ -35,13 +35,12 @@ void	ft_sort_three(t_list *stack, int min, int max)
 
 	in1 = stack->index;
 	in2 = stack->next->index;
-	printf("min = %d  max = %d\n", min, max);
 	if ((in1 == max && in2 != min) || (in1 == min && in2 == max))
 		ft_sort_three_swap(stack, max);
 	else if (in1 == max)
 	{
 		ft_rotate(&stack);
-		ft_putstr("ra 1\n");
+		ft_putstr("ra\n");
 	}
 	else if (in2 == min)
 	{

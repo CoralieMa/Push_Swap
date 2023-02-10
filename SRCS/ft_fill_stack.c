@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:12:42 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/07 12:03:35 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/10 10:43:58 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@ void	ft_check(t_list *lst, int nb)
 	while (lst)
 	{
 		if (lst->value == nb)
-			exit(0);
+			ft_exit();
 		lst = lst->next;
 	}
 }
 
-t_list	*ft_fill_stack(char **data)
+t_list	*ft_fill_stack(char **data, int size)
 {
 	t_list	*stack;
 	int		nb;
 
-	stack = NULL;
 	++data;
+	if (size == 2)
+		data = ft_split(data[0], ' ');
+	else
+		stack = NULL;
 	while (*data)
 	{
 		nb = ft_atoi(*data);
