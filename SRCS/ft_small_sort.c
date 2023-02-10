@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:52:43 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/10 11:53:36 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:47:18 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_sort_five(t_list *stack_a, t_list *stack_b)
 	if (!ft_lst_is_sorted(stack_b))
 		ft_sort_two(stack_b, 0);
 	ft_repush_small_sort(&stack_a, &stack_b, 5);
-	ft_repush_small_sort(&stack_a, &stack_b, 5);
+	ft_test(stack_a);
 }
 
 void	ft_small_sort(t_list *stack_a, t_list *stack_b, int size)
