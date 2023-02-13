@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_stack.c                                    :+:      :+:    :+:   */
+/*   ft_min_and_max.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 13:12:42 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 11:35:06 by cmartino         ###   ########.fr       */
+/*   Created: 2023/02/13 10:43:30 by cmartino          #+#    #+#             */
+/*   Updated: 2023/02/13 10:46:40 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
-void	ft_check(t_list *lst, int nb)
+void	ft_min_and_max(t_list **stack_a, t_list **stack_b)
 {
-	while (lst)
+	if ((*stack_b)->index == 1)
 	{
-		if (lst->value == nb)
-			ft_exit();
-		lst = lst->next;
+		ft_push(stack_a, stack_b);
+		ft_putstr("pa\n");
 	}
-}
-
-t_list	*ft_fill_stack(char **data, int size)
-{
-	t_list	*stack;
-	int		nb;
-
-	++data;
-	if (size == 2)
-		data = ft_split(data[0], ' ');
 	else
-		stack = NULL;
-	while (*data)
 	{
-		nb = ft_atoi(*data);
-		ft_check(stack, nb);
-		ft_lstadd_back(&stack, ft_lstnew(nb));
-		++data;
+		ft_push(stack_a, stack_b);
+		ft_putstr("pa\n");
+		ft_rotate(stack_a);
+		ft_putstr("ra\n");
 	}
-	return (stack);
 }

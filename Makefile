@@ -6,7 +6,7 @@
 #    By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 15:01:45 by cmartino          #+#    #+#              #
-#    Updated: 2023/02/10 11:00:10 by cmartino         ###   ########.fr        #
+#    Updated: 2023/02/13 11:02:29 by cmartino         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME	= push_swap
 FILES	= push_swap \
 			ft_repush_small_sort \
 			ft_instructions \
+			ft_min_and_max \
 			ft_sort_three \
 			ft_small_sort \
 			ft_fill_stack \
@@ -27,8 +28,7 @@ FILES	= push_swap \
 			ft_split \
 			ft_radix \
 			ft_exit \
-			ft_atoi \
-			extra
+			ft_atoi
 
 
 SRCS	= ${addprefix SRCS/, $(addsuffix .c, $(FILES))}

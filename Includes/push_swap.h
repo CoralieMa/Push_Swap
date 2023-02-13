@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:04:02 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/10 11:27:54 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:34:29 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_reverse_rotate(t_list **lst);
 void	ft_exit(void);
 void	ft_index(t_list *stack);
 void	ft_test(t_list *stack);
+void	ft_min_and_max(t_list **stack_a, t_list **stack_b);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_radix(t_list *stack_a, t_list *stack_b);
 void	ft_small_sort(t_list *stack_a, t_list *stack_b, int size);
@@ -47,9 +48,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	**ft_split(char const *s, char c);
 t_list	*ft_lstnew(int value);
 t_list	*ft_fill_stack(char **data, int size);
-
-// void print_bin(unsigned char byte);
-void ft_printlst(t_list *lst1, t_list *lst2);
-void ft_printflst1(t_list *lst);
 
 #endif
