@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:59:18 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 11:37:25 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:29:21 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@ int	main(int argc, char **argv)
 		else if (size > 1)
 			ft_small_sort(stack_a, stack_b, size);
 	}
+	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 11:04:02 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 11:34:29 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:08:24 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, t_list *stack);
 int		ft_lstsize(t_list *lst);
 int		ft_lst_is_sorted(t_list *lst);
 int		ft_lstmax(t_list *lst);
@@ -34,9 +34,10 @@ void	ft_swap(t_list	*lst);
 void	ft_push(t_list **lst1, t_list **lst2);
 void	ft_rotate(t_list **lst);
 void	ft_reverse_rotate(t_list **lst);
-void	ft_exit(void);
+void	ft_exit(t_list *list);
 void	ft_index(t_list *stack);
 void	ft_test(t_list *stack);
+void	ft_lstclear(t_list **lst);
 void	ft_min_and_max(t_list **stack_a, t_list **stack_b);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_radix(t_list *stack_a, t_list *stack_b);

@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:59:14 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 11:38:02 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:03:52 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_malloc(int count, int size)
 
 	a = malloc(count * size);
 	if (!a)
-		ft_exit();
+		exit(0);
 	return (a);
 }
