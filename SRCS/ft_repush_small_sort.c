@@ -6,33 +6,13 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:43:33 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 10:48:15 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/14 09:57:33 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/push_swap.h"
 
 void	ft_order(t_list *stack)
-{
-	if (stack->index < 3)
-	{
-		while (stack->index != 1)
-		{
-			ft_reverse_rotate(&stack);
-			ft_putstr("rra\n");
-		}
-	}
-	else
-	{
-		while (stack->index != 1)
-		{
-			ft_rotate(&stack);
-			ft_putstr("ra\n");
-		}
-	}
-}
-
-void	ft_test(t_list *stack)
 {
 	if (stack->index < 3)
 	{
@@ -84,7 +64,7 @@ static void	ft_repush_second_number(t_list **stack_a, t_list **stack_b)
 	b = *stack_b;
 	if (b->index == 5)
 	{
-		ft_test(a);
+		ft_order(a);
 		ft_push(&a, &b);
 		ft_rotate(&a);
 		ft_putstr("pa\nra\n");

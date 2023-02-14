@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:39:07 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 11:37:18 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:02:07 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	ft_lst_is_sorted(t_list *lst)
 	return (1);
 }
 
-t_list	*ft_lstnew(int value)
+t_list	*ft_lstnew(int value, t_list *stack)
 {
 	t_list	*lst;
 
-	lst = ft_malloc(1, sizeof(*lst));
+	lst = ft_malloc(1, sizeof(*lst), stack);
 	lst->value = value;
 	lst->index = -1;
 	lst->next = NULL;

@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 13:12:42 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 15:29:36 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:01:30 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_list	*ft_fill_stack(char **data, int size)
 		nb = ft_atoi(*data, stack);
 		if (!ft_check(stack, nb))
 			ft_exit(stack);
-		ft_lstadd_back(&stack, ft_lstnew(nb));
+		ft_lstadd_back(&stack, ft_lstnew(nb, stack));
 		++data;
 	}
 	return (stack);

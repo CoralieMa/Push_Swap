@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 11:25:56 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 15:05:12 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:36:14 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(const char *str, t_list *stack)
 		sign = -1;
 		++i;
 	}
-	if (str[i] < '1' || str[i] > '9')
+	if (str[i] < '0' || str[i] > '9')
 		ft_exit(stack);
 	while (str[i] >= '0' && str[i] <= '9')
 	{

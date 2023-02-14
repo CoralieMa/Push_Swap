@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:52:43 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 10:47:28 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/14 09:55:24 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_sort_four(t_list *stack_a, t_list *stack_b)
 	if (!ft_lst_is_sorted(stack_a))
 		ft_sort_three(stack_a, ft_lstmin(stack_a), ft_lstmax(stack_a));
 	ft_repush_small_sort(&stack_a, &stack_b, 4);
-	ft_test(stack_a);
+	ft_order(stack_a);
 }
 
 void	ft_sort_five(t_list *stack_a, t_list *stack_b)

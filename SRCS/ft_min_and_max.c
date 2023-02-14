@@ -6,7 +6,7 @@
 /*   By: cmartino <cmartino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 10:43:30 by cmartino          #+#    #+#             */
-/*   Updated: 2023/02/13 10:46:40 by cmartino         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:08:59 by cmartino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	ft_min_and_max(t_list **stack_a, t_list **stack_b)
 	else
 	{
 		ft_push(stack_a, stack_b);
-		ft_putstr("pa\n");
 		ft_rotate(stack_a);
-		ft_putstr("ra\n");
+		ft_putstr("pa\nra\n");
 	}
 }
